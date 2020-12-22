@@ -1,28 +1,38 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="">
+	<div>
+		<!-- Breaking Bad -->
+		<Header></Header>
+		<Search></Search>
+	</div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+	import Header from "./components/Header";
+	import Search from "./components/Search";
+	export default {
+		name: "App",
+		components: {
+			Header,
+			Search
+		}
+	};
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: "Montserrat";
+		color: white;
+		background: rgb(0, 0, 0);
+		background: linear-gradient(
+			90deg,
+			rgba(0, 0, 0, 1) 0%,
+			rgba(2, 44, 23, 1) 33%,
+			rgba(2, 44, 23, 1) 66%,
+			rgba(0, 0, 0, 1) 100%
+		);
+	}
 </style>
