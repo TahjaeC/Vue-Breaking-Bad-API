@@ -2,17 +2,39 @@
 	<div>
 		<!-- Breaking Bad -->
 		<Header></Header>
-		<Search></Search>
+		<Search v-on:wordChange="onWordChange"></Search>
+		<Actors></Actors>
 	</div>
 </template>
 <script>
 	import Header from "./components/Header";
 	import Search from "./components/Search";
+	import Actors from "./components/Actors";
+	import axios from "axios";
+
 	export default {
 		name: "App",
 		components: {
 			Header,
-			Search
+			Search,
+			Actors
+		},
+		mounted() {
+			axios
+				.get("https://www.breakingbadapi.com/api/characters", {})
+				.then((response) => {
+					this.datas = response.data;
+					console.log(response.data);
+				})
+				.catch(function(error) {
+					console.log(error);
+				});
+			//This is how to get all data from the api endpoint with axios
+		},
+		methods: {
+			onWordChange: function(searchTerm) {
+				console.log(searchTerm);
+			}
 		}
 	};
 </script>

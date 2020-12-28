@@ -1,11 +1,17 @@
 <template lang="">
 	<div class="container">
-		<input type="text" />
+		<input type="text" placeholder="Search..." v-on:input="onInput" />
 	</div>
 </template>
 <script>
 	export default {
-		name: "Search"
+		name: "Search",
+		methods: {
+			onInput: function(event) {
+				// console.log(event.target.value); //Get chacracter input
+				this.$emit("wordChange", event.target.value); //Passing data up to the App.vue
+			}
+		}
 	};
 </script>
 <style scoped>
@@ -16,9 +22,12 @@
 	}
 	input {
 		margin-top: 50px;
-		width: 600px;
+		width: 400px;
 		height: 40px;
 		background-color: white;
 		border-radius: 5px;
+		font-family: "Comfortaa";
+		padding-left: 10px;
+		border: none;
 	}
 </style>

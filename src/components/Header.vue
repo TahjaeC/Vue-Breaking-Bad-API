@@ -1,7 +1,7 @@
 <template lang="">
 	<div>
 		<div class="header-container">
-			<img src="../img/logo.svg" alt="" />
+			<img src="../img/logo.svg" alt="Breaking Bad Logo" />
 		</div>
 	</div>
 </template>
