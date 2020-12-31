@@ -19,6 +19,6 @@
 	img {
 		padding-left: 40px;
 		padding-top: 40px;
-		width: 190px;
+		width: 250px;
 	}
 </style>

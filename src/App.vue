@@ -3,28 +3,37 @@
 		<!-- Breaking Bad -->
 		<Header></Header>
 		<Search v-on:wordChange="onWordChange"></Search>
-		<Actors></Actors>
+		<ActorList v-bind:characters="actorInfo"></ActorList>
+		<!-- characters is the name of the property we want to show up in the child component -->
+		<!-- {{ actorInfo.length }} -->
+		<Actor></Actor>
 	</div>
 </template>
 <script>
 	import Header from "./components/Header";
 	import Search from "./components/Search";
-	import Actors from "./components/Actors";
+	import ActorList from "./components/ActorList";
+	import Actor from "./components/Actor";
 	import axios from "axios";
 
 	export default {
 		name: "App",
+		data: function() {
+			return { actorInfo: [] };
+		},
 		components: {
 			Header,
 			Search,
-			Actors
+			ActorList,
+			Actor
 		},
 		mounted() {
 			axios
 				.get("https://www.breakingbadapi.com/api/characters", {})
 				.then((response) => {
-					this.datas = response.data;
-					console.log(response.data);
+					this.actorInfo = response.data;
+					// this.datas = response.data;
+					// console.log(response.data);
 				})
 				.catch(function(error) {
 					console.log(error);
@@ -47,6 +56,7 @@
 
 	body {
 		font-family: "Montserrat";
+		font-size: 15px;
 		color: white;
 		background: rgb(0, 0, 0);
 		background: linear-gradient(

@@ -22,7 +22,7 @@
 	}
 	input {
 		margin-top: 50px;
-		width: 400px;
+		width: 600px;
 		height: 40px;
 		background-color: white;
 		border-radius: 5px;
