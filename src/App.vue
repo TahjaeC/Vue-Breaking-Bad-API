@@ -16,6 +16,37 @@
 	import Actor from "./components/Actor";
 	import axios from "axios";
 
+	// export default {
+	// 	name: "App",
+	// 	data: function() {
+	// 		return { actorInfo: [] };
+	// 	},
+	// 	components: {
+	// 		Header,
+	// 		Search,
+	// 		ActorList,
+	// 		Actor
+	// 	},
+	// 	mounted() {
+	// 		axios
+	// 			.get("https://www.breakingbadapi.com/api/characters?name", {})
+	// 			.then((response) => {
+	// 				this.actorInfo = response.data;
+	// 				// this.datas = response.data;
+	// 				// console.log(response.data);
+	// 			})
+	// 			.catch(function(error) {
+	// 				console.log(error);
+	// 			});
+	// 		//This is how to get all data from the api endpoint with axios
+	// 	},
+	// 	methods: {
+	// 		onWordChange: function(searchTerm) {
+	// 			console.log(searchTerm);
+	// 		}
+	// 	}
+	// };
+
 	export default {
 		name: "App",
 		data: function() {
@@ -28,21 +59,20 @@
 			Actor
 		},
 		mounted() {
-			axios
-				.get("https://www.breakingbadapi.com/api/characters", {})
-				.then((response) => {
-					this.actorInfo = response.data;
-					// this.datas = response.data;
-					// console.log(response.data);
-				})
-				.catch(function(error) {
-					console.log(error);
-				});
-			//This is how to get all data from the api endpoint with axios
+			this.search(""); // I confirmed that this will load all records on page load
 		},
 		methods: {
-			onWordChange: function(searchTerm) {
-				console.log(searchTerm);
+			onWordChange(searchTerm) {
+				this.search(searchTerm);
+			},
+			search(searchTerm) {
+				axios
+					.get(
+						`https://www.breakingbadapi.com/api/characters?name=${searchTerm}`
+					)
+					.then((response) => {
+						this.actorInfo = response.data;
+					});
 			}
 		}
 	};
