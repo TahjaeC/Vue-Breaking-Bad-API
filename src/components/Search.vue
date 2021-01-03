@@ -22,12 +22,17 @@
 	}
 	input {
 		margin-top: 50px;
-		width: 600px;
+		width: 500px;
 		height: 40px;
 		background-color: white;
 		border-radius: 5px;
 		font-family: "Comfortaa";
 		padding-left: 10px;
 		border: none;
+	}
+	@media screen and (max-width: 768px) {
+		input {
+			width: 250px;
+		}
 	}
 </style>

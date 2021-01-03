@@ -47,7 +47,7 @@
 	}
 	img {
 		height: 500px;
-		width: 100%;
+		width: auto;
 	}
 	.card {
 		/* Add shadows to create the "card" effect */
