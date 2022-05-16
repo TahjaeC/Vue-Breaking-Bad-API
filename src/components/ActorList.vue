@@ -13,14 +13,14 @@
 	</div>
 </template>
 <script>
-	import Actor from "./Actor";
+	import Actor from './Actor';
 
 	export default {
-		name: "ActorList",
+		name: 'ActorList',
 		components: {
 			Actor
 		},
-		props: ["characters"]
+		props: ['characters']
 	};
 </script>
 <style scoped>
@@ -30,5 +30,6 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, auto));
 		gap: 20px;
+		justify-content: center;
 	}
 </style>

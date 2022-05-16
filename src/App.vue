@@ -10,11 +10,11 @@
 	</div>
 </template>
 <script>
-	import Header from "./components/Header";
-	import Search from "./components/Search";
-	import ActorList from "./components/ActorList";
-	import Actor from "./components/Actor";
-	import axios from "axios";
+	import Header from './components/Header';
+	import Search from './components/Search';
+	import ActorList from './components/ActorList';
+	import Actor from './components/Actor';
+	import axios from 'axios';
 
 	// export default {
 	// 	name: "App",
@@ -48,7 +48,7 @@
 	// };
 
 	export default {
-		name: "App",
+		name: 'App',
 		data: function() {
 			return { actorInfo: [] };
 		},
@@ -59,7 +59,7 @@
 			Actor
 		},
 		mounted() {
-			this.search(""); // I confirmed that this will load all records on page load
+			this.search(''); // I confirmed that this will load all records on page load
 		},
 		methods: {
 			onWordChange(searchTerm) {
@@ -85,7 +85,7 @@
 	}
 
 	body {
-		font-family: "Montserrat";
+		font-family: 'Poppins';
 		font-size: 15px;
 		color: white;
 		background: rgb(0, 0, 0);

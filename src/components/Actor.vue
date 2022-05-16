@@ -29,8 +29,8 @@
 </template>
 <script>
 	export default {
-		name: "Actor",
-		props: ["characterInfo"]
+		name: 'Actor',
+		props: ['characterInfo']
 	};
 </script>
 <style scoped>
@@ -46,15 +46,16 @@
 		font-weight: bold;
 	}
 	img {
-		height: 500px;
+		height: 450px;
 		width: auto;
 	}
 	.card {
 		/* Add shadows to create the "card" effect */
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 		transition: 0.3s;
-		height: 750px;
+		height: 720px;
 		background-color: rgb(19, 17, 15);
+		max-width: 350px;
 	}
 
 	/* Add some padding inside the card container */

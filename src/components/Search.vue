@@ -5,11 +5,11 @@
 </template>
 <script>
 	export default {
-		name: "Search",
+		name: 'Search',
 		methods: {
 			onInput: function(event) {
 				// console.log(event.target.value); //Get chacracter input
-				this.$emit("wordChange", event.target.value); //Passing data up to the App.vue
+				this.$emit('wordChange', event.target.value); //Passing data up to the App.vue
 			}
 		}
 	};
@@ -22,13 +22,14 @@
 	}
 	input {
 		margin-top: 50px;
-		width: 500px;
+		width: 400px;
 		height: 40px;
 		background-color: white;
 		border-radius: 5px;
-		font-family: "Comfortaa";
+		font-family: 'Comfortaa';
 		padding-left: 10px;
 		border: none;
+		outline: none;
 	}
 	@media screen and (max-width: 768px) {
 		input {
